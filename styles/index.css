@@ -111,10 +111,6 @@ body {
 	border-top: 1px solid var(--scroll-item-border-color);
 }
 
-.travel-english .scroll .item .audio {
-	display: none;
-}
-
 .travel-english .scroll .item.clicked {
 	background-color: var(--scroll-item-color-selected);
 }

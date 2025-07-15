@@ -75,13 +75,12 @@ appUI.create('phrase', html `
 			<div class="item">
 				<div class="english">${phrase.english}</div>
 				<div class="chinese">${phrase.chinese}</div>
-				<div class="audio">${phrase.audio}</div>
 			</div>
 		`);
         item.addEventListener('click', () => {
             removeHighLightFromAllItems();
             item.classList.add('clicked');
-            audio.src = `phrases/${phrase.audio}`;
+            audio.src = `${phrase.audio}`;
             audio.play();
         });
         phraseContainer.appendChild(item);
