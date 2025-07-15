@@ -1,0 +1,120 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.travel-english {
+	--font-color: #000000;
+	--background-color: #f2f2f7;
+	--color: #000000;
+	--button-background-color: #ffffff;
+	--button-background-color-hover: #e8e8e8;
+	--button-background-color-active: #d1d1d1;
+	--button-color: #000000;
+	--button-background-color-primary: #007bff;
+	--button-background-color-primary-hover: #0065d1;
+	--button-background-color-primary-active: #004fa3;
+	--button-color-primary: #ffffff;
+	--scroll-background-color: #ffffff;
+	--scroll-item-border-color: #ececed;
+	--scroll-item-color-selected: #eaeaeb;
+	--slider-background-color: #cccccc;
+}
+
+@media (prefers-color-scheme: dark) {
+	.travel-english {
+		--font-color: #ffffff;
+		--background-color: #000000;
+		--color: #ffffff;
+		--button-background-color: #1c1c1e;
+		--button-background-color-hover: #313135;
+		--button-background-color-active: #48484c;
+		--button-color: #ffffff;
+		--button-background-color-primary: #004fa3;
+		--button-background-color-primary-hover: #0065d1;
+		--button-background-color-primary-active: #007bff;
+		--button-color-primary: #ffffff;
+		--scroll-background-color: #1b1b1d;
+		--scroll-item-border-color: #3c3c3e;
+		--scroll-item-color-selected: #303036;
+		--slider-background-color: #39383d;
+	}
+}
+
+.travel-english {
+	background-color: var(--background-color);
+	color: var(--font-color);
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1024px;
+	height: 100%;
+	display: flex;
+	padding: 0.5rem 0.5rem;
+	flex-direction: column;
+	justify-content: space-between;
+	user-select: none;
+}
+
+.travel-english .top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.25rem;
+	padding: 0 0.25rem;
+}
+
+.travel-english .top .center {
+	font-size: 2rem;
+	padding-left: 2rem;
+	margin-bottom: calc(0.25rem * 0.25);
+}
+
+.travel-english .top .right {
+	font-size: 1.5rem;
+	color: var(--button-background-color-primary);
+}
+
+.travel-english .top .right:hover {
+	color: var(--button-background-color-primary-hover);
+}
+
+.travel-english .top .right:active {
+	color: var(--button-background-color-primary-active);
+}
+
+.travel-english .scroll {
+	font-size: 1.5rem;
+	background-color: var(--scroll-background-color);
+	border-radius: 0.5rem;
+	overflow: auto;
+}
+
+.travel-english .scroll.maximized {
+	flex-grow: 1;
+}
+
+.travel-english .scroll .item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0.75rem 1rem;
+	transition: background-color 0.1s;
+}
+
+.travel-english .scroll .item + .item {
+	border-top: 1px solid var(--scroll-item-border-color);
+}
+
+.travel-english .scroll .item .audio {
+	display: none;
+}
+
+.travel-english .scroll .item.clicked {
+	background-color: var(--scroll-item-color-selected);
+}

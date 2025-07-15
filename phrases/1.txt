@@ -1,0 +1,71 @@
+Do you speak Chinese?
+你会说中文吗？
+do-you-speak-chinese.m4a
+
+I don't speak English.
+我不会说英语。
+i-dont-speak-english.m4a
+
+Can I use Google Translate on my phone?
+我要用手机翻译。
+can-i-use-google-translate.m4a
+
+Can you speak to my phone so that it can translate?
+对手机说话（以便用手机来翻译）。
+can-you-speak-to-my-phone.m4a
+
+Can you write it down?
+写下来。
+can-you-write-it-down.m4a
+
+Can you help me?
+帮帮我。
+can-you-help-me.m4a
+
+I am a tourist.
+我是来旅游的。
+i-am-a-tourist.m4a
+
+I'm lost.
+我迷路了。
+i-am-lost.m4a
+
+Where should I go?
+我该去哪？
+where-should-i-go.m4a
+
+Where is it?
+哪里？
+where-is-it.m4a
+
+Where is the bathroom?
+厕所在哪里？
+where-is-the-bathroom.m4a
+
+Where do I get my luggage?
+在哪里取行李？
+where-do-i-get-my-luggage.m4a
+
+Can I get some water?
+我要喝水。
+can-i-get-some-water.m4a
+
+Can I get some napkins?
+我要餐巾纸。
+can-i-get-some-napkins.m4a
+
+Can I get this?
+我要这个。
+can-i-get-this.m4a
+
+How much is it?
+多少钱？
+how-much-is-it.m4a
+
+Can I pay by cash?
+现金支付。
+can-i-pay-by-cash.m4a
+
+Can I pay by card?
+刷卡。
+can-i-pay-by-card.m4a
