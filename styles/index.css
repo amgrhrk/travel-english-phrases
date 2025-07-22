@@ -62,13 +62,17 @@ body {
 	user-select: none;
 }
 
+.travel-english * {
+	box-sizing: border-box;
+}
+
 .travel-english .search-bar {
 	background-color: var(--background-color);
 	outline: none;
 	border: none;
 	border-bottom: 1px solid var(--button-background-color-primary);
-	width: 96%;
 	font-size: 1.5rem;
+	flex: 1 1 auto;
 }
 
 .travel-english .hide {
@@ -76,9 +80,10 @@ body {
 }
 
 .travel-english .top .center.fill {
-	height: 2rem;
-	flex-grow: 1;
 	padding-left: 0px;
+	flex: 1 1 auto;
+	margin-left: 0.25rem;
+	margin-right: 0.75rem;
 }
 
 .travel-english .top {
