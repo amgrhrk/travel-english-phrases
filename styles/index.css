@@ -1,12 +1,14 @@
 html, body {
 	height: 100%;
+	overflow: hidden;
 }
 
 body {
-	margin: 0;
+	background-color: var(--background-color);
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	margin: 0;
 }
 
 .travel-english {
@@ -27,7 +29,7 @@ body {
 	--slider-background-color: #cccccc;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	.travel-english {
 		--font-color: #ffffff;
 		--background-color: #000000;
@@ -45,7 +47,7 @@ body {
 		--scroll-item-color-selected: #303036;
 		--slider-background-color: #39383d;
 	}
-}
+} */
 
 .travel-english {
 	background-color: var(--background-color);
@@ -56,9 +58,10 @@ body {
 	max-width: 1024px;
 	height: 100%;
 	display: flex;
-	padding: 0.5rem 0.5rem;
+	padding: 0 0.5rem 0.5rem 0.5rem;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
+	align-items: stretch;
 	user-select: none;
 }
 
@@ -66,64 +69,65 @@ body {
 	box-sizing: border-box;
 }
 
-.travel-english .search-bar {
+.travel-english .title-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex: 0 0 3.75rem;
+	padding: 0 0.25rem;
+	width: 100%;
+	overflow: hidden;
+}
+
+.travel-english .title-bar .left {
+	width: 2rem;
+	height: 2rem;
+}
+
+.travel-english .title-bar .center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	flex: 1 1 auto;
+}
+
+.travel-english .title-bar .right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	color: var(--button-background-color-primary);
+}
+
+.travel-english .title-bar .right:hover {
+	color: var(--button-background-color-primary-hover);
+}
+
+.travel-english .title-bar .right:active {
+	color: var(--button-background-color-primary-active);
+}
+
+.travel-english input[name="search-bar"] {
 	background-color: var(--background-color);
 	outline: none;
 	border: none;
 	border-bottom: 1px solid var(--button-background-color-primary);
 	font-size: 1.5rem;
-	flex: 1 1 auto;
-}
-
-.travel-english .hide {
-	display: none !important;
-}
-
-.travel-english .top .center.fill {
-	padding-left: 0px;
-	flex: 1 1 auto;
-	margin-left: 0.25rem;
-	margin-right: 0.75rem;
-}
-
-.travel-english .top {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 0.25rem;
-	padding: 0 0.25rem;
-	flex: 0 0 45px;
-}
-
-.travel-english .top .center {
-	display: flex;
-	font-size: 2rem;
-	padding-left: 2rem;
-	margin-bottom: 0.25rem;
-}
-
-.travel-english .top .right {
-	font-size: 1.5rem;
-	color: var(--button-background-color-primary);
-}
-
-.travel-english .top .right:hover {
-	color: var(--button-background-color-primary-hover);
-}
-
-.travel-english .top .right:active {
-	color: var(--button-background-color-primary-active);
+	width: calc(100% - 0.5rem);
+	margin-right: auto;
 }
 
 .travel-english .scroll {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	font-size: 1.5rem;
 	background-color: var(--scroll-background-color);
 	border-radius: 0.5rem;
 	overflow: auto;
-}
-
-.travel-english .scroll.maximized {
-	flex-grow: 1;
+	flex: 1 1 auto;
 }
 
 .travel-english .scroll .item {
@@ -140,4 +144,8 @@ body {
 
 .travel-english .scroll .item.clicked {
 	background-color: var(--scroll-item-color-selected);
+}
+
+.travel-english .hide {
+	display: none !important;
 }

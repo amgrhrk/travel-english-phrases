@@ -51,23 +51,22 @@ class TravelEnglishUI {
 const appUI = new TravelEnglishUI(document.body);
 appUI.create('phrase', html `
 	<div class="travel-english">
-		<div class="top">
+		<div class="title-bar">
 			<div class="left"></div>
 			<div class="center">
 				<div class="title">旅游英语100句</div>
-				<input class="search-bar hide">
+				<input class="hide" name="search-bar" size="1">
 			</div>
 			<div class="right">搜索</div>
 		</div>
-		<div class="scroll maximized"></div>
+		<div class="scroll"></div>
 	</div>
 `, phraseScreen => {
-    const phraseContainer = phraseScreen.element.querySelector('.scroll');
-    const searchButton = phraseScreen.element.querySelector('.right');
-    const searchBar = phraseScreen.element.querySelector('.search-bar');
-    const centerArea = phraseScreen.element.querySelector('.center');
+    const spacer = phraseScreen.element.querySelector('.left');
     const appTitle = phraseScreen.element.querySelector('.title');
-    const input = phraseScreen.element.querySelector('input');
+    const searchBar = phraseScreen.element.querySelector('input');
+    const searchButton = phraseScreen.element.querySelector('.right');
+    const phraseContainer = phraseScreen.element.querySelector('.scroll');
     const audio = new Audio();
     let highlightedElement = null;
     let items = null;
@@ -82,16 +81,16 @@ appUI.create('phrase', html `
 			<div class="item">
 				<div class="english">${english}</div>
 				<div class="chinese">${chinese}</div>
-				<div class="audio" style="display: none;">${audioBase64}</div>
 			</div>
 		`);
+        item.dataset.audio = audioBase64;
         item.addEventListener('click', () => {
             if (highlightedElement) {
                 highlightedElement.classList.remove('clicked');
             }
             highlightedElement = item;
             item.classList.add('clicked');
-            audio.src = item.querySelector('.audio').innerText;
+            audio.src = item.dataset.audio;
             audio.play();
         });
         phraseContainer.appendChild(item);
@@ -108,16 +107,16 @@ appUI.create('phrase', html `
         }
     };
     searchButton.addEventListener('click', () => {
-        searchBar.classList.toggle('hide');
         appTitle.classList.toggle('hide');
-        centerArea.classList.toggle('fill');
+        searchBar.classList.toggle('hide');
+        spacer.classList.toggle('hide');
         if (searchButton.innerText === '搜索') {
             searchButton.innerText = '关闭';
-            input.focus();
+            searchBar.focus();
         }
         else {
             searchButton.innerText = '搜索';
-            input.value = '';
+            searchBar.value = '';
             if (items) {
                 for (const item of items) {
                     item.classList.remove('hide');
@@ -125,11 +124,11 @@ appUI.create('phrase', html `
             }
         }
     });
-    input.addEventListener('input', () => {
+    searchBar.addEventListener('input', () => {
         if (!items) {
             items = [...phraseContainer.querySelectorAll('.item')];
         }
-        const value = input.value.trim();
+        const value = searchBar.value.trim();
         for (const item of items) {
             const english = item.querySelector('.english');
             const chinese = item.querySelector('.chinese');
