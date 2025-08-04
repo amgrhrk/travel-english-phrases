@@ -57,7 +57,9 @@ appUI.create('phrase', html `
 				<div class="title">旅游英语100句</div>
 				<input class="hide" name="search-bar" size="1">
 			</div>
-			<div class="right">搜索</div>
+			<div class="right">
+				<div class="search-button">搜索</div>
+			</div>
 		</div>
 		<div class="scroll"></div>
 	</div>
@@ -65,7 +67,7 @@ appUI.create('phrase', html `
     const spacer = phraseScreen.element.querySelector('.left');
     const appTitle = phraseScreen.element.querySelector('.title');
     const searchBar = phraseScreen.element.querySelector('input');
-    const searchButton = phraseScreen.element.querySelector('.right');
+    const searchButton = phraseScreen.element.querySelector('.search-button');
     const phraseContainer = phraseScreen.element.querySelector('.scroll');
     const audio = new Audio();
     let highlightedElement = null;

@@ -1,10 +1,10 @@
 html, body {
 	height: 100%;
 	overflow: hidden;
+	background-color: var(--background-color);
 }
 
 body {
-	background-color: var(--background-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,7 +29,7 @@ body {
 	--slider-background-color: #cccccc;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	.travel-english {
 		--font-color: #ffffff;
 		--background-color: #000000;
@@ -47,7 +47,7 @@ body {
 		--scroll-item-color-selected: #303036;
 		--slider-background-color: #39383d;
 	}
-} */
+}
 
 .travel-english {
 	background-color: var(--background-color);
@@ -63,6 +63,8 @@ body {
 	justify-content: flex-start;
 	align-items: stretch;
 	user-select: none;
+	cursor: default;
+	overflow: hidden;
 }
 
 .travel-english * {
@@ -80,20 +82,22 @@ body {
 	overflow: hidden;
 }
 
-.travel-english .title-bar .left {
-	width: 2rem;
-	height: 2rem;
-}
-
 .travel-english .title-bar .center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 2rem;
 	flex: 1 1 auto;
+	transform: translateX(1rem);
 }
 
 .travel-english .title-bar .right {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.travel-english .title-bar .right .search-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -101,11 +105,11 @@ body {
 	color: var(--button-background-color-primary);
 }
 
-.travel-english .title-bar .right:hover {
+.travel-english .title-bar .right .search-button:hover {
 	color: var(--button-background-color-primary-hover);
 }
 
-.travel-english .title-bar .right:active {
+.travel-english .title-bar .right .search-button:active {
 	color: var(--button-background-color-primary-active);
 }
 
@@ -115,8 +119,9 @@ body {
 	border: none;
 	border-bottom: 1px solid var(--button-background-color-primary);
 	font-size: 1.5rem;
-	width: calc(100% - 0.5rem);
-	margin-right: auto;
+	margin-right: 1rem;
+	flex: 1 1 auto;
+	transform: translateX(-1rem);
 }
 
 .travel-english .scroll {
